@@ -87,7 +87,33 @@
             js.src = "https://sdk.snapkit.com/js/v1/login_bitmoji.js";
             sjs.parentNode.insertBefore(js, sjs);
         }(document, 'script', 'bitmojikit-sdk'));
+
+
+
+
+        var express = require('express'); // Will need to 'npm install express'
+        var app = express();
+
+        var clientId = 'my-assigned-client-id';
+        var clientSecret = 'my-assigned-client-secret';
+        var redirectUri = 'https://my-redirect-uri.com';
+        var scopeList = ['https://auth.snapchat.com/oauth2/api/example.abc', 'https://auth.snapchat.com/oauth2/api/example.xyz'];
+
+        app.get('/send-oauth-GET-request-step-two', function(req, res){
+        // Generate query parameters
+        var state = generateClientState();
+
+        // Build redirect URL
+        var getRedirectURL = getAuthCodeRedirectURL(clientId, redirectUri, scopeList, state);
+
+        // Redirect user to get consent
+        res.redirect(getRedirectURL);
+        });
+
+        app.listen(3000);
         </script>
+
+        
     </body>
 
 </html>

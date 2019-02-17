@@ -14,9 +14,12 @@ class Match
     {
         this.gamesPlayed = 0;
         this.currentGame = new Game();
-        this.player1 = new Player("player1");
-        this.player2 = new Player("player2");
+        this.player1;
+        this.player2;
+        this.player1 = new Player(this, "player1");
+        this.player2 = new Player(this, "player2");
         this.clock = new Clock("matchTime");
+        this.servingSide = "R";
         this.updateUI();
     }
 
@@ -44,6 +47,23 @@ class Match
     {
         document.getElementById("matchScore").innerHTML = this.player1.games+"-"+this.player2.games;
     }
+    switchServingSide()
+    {
+        if (this.servingSide == "R")
+        {
+            this.servingSide = "L";
+        }
+        else
+        {
+            this.servingSide = "R";
+        }
+        this.updateServeSideUI();
+    }
+    updateServeSideUI()
+    {
+        document.getElementById("player1Side").children[4].children[2].innerText = this.servingSide;
+        document.getElementById("player2Side").children[4].children[2].innerText = this.servingSide;
+    }
 }
 
 class Game
@@ -56,12 +76,15 @@ class Game
 
 class Player 
 {
-    constructor(id)
+    constructor(match, id)
     {
+        this.match = match;
         this.id = id; 
-        this.name = (id == "Player1") ? "Player 1" : "Player 2";
+        this.name = (id == "player1") ? "Player 1" : "Player 2";
         this.score = 0;
         this.games = 0;
+        this.opponentId = (id == "player1") ? "player2" : "player1";
+        this.hasServe;
     }
 
     win(match, loser)
@@ -73,6 +96,7 @@ class Player
     {
         this.score++;
         Testhistory += ":Player1IncreaseScore";
+        match.switchServingSide();
         this.updateUI();
     }
     decreaseScore()
@@ -122,8 +146,23 @@ class Player
     updateUI()
     {
         this.updateScoreUI();
+        this.takeServe();
     }
 
+    takeServe()
+    {
+        this.hasServe = true;
+        this.updateServeUI();
+    }
+
+    updateServeUI()
+    {
+        if(this.hasServe)
+        {
+            document.getElementById(this.id+"Side").children[4].style.display = "flex";
+            document.getElementById(this.opponentId+"Side").children[4].style.display = "none";
+        }
+    }
     updateScoreUI()
     {
         document.getElementById(this.id+"Side").children[1].innerText = this.score;
