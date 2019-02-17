@@ -99,3 +99,222 @@ body
     height: 0px;
     width: 350px;
 }
+
+.name
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 120px;
+    border-radius: 5px;
+    color: White;
+    font-size: 23px;
+    text-align: left;
+    padding:5px;
+    box-sizing: border-box;
+}
+
+#player1Side .name
+{
+    position: absolute;
+    top: 100px;
+    left: 10px;
+    background: red;
+}
+
+#player2Side .name
+{
+    position: absolute;
+    top: 100px;
+    right: 10px;
+    background: blue;
+}
+
+.score
+{
+    height: 120px;
+    width: 120px;
+    background: green;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:5px;
+    box-sizing: border-box;
+    font-size: 80px;
+    color:white;
+}
+
+#player1Side .score
+{
+    position: absolute;
+    top: 145px;
+    left: 10px;
+}
+
+#player2Side .score
+{
+    position: absolute;
+    top: 145px;
+    right: 10px;
+}
+
+.letCall
+{
+    height: 40px;
+    width: 120px;
+    background: rgb(214, 0, 0);
+    border: 4px red solid;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:5px;
+    box-sizing: border-box;
+    font-size: 21px;
+    color:white;
+}
+
+#player1Side .letCall
+{
+    position: absolute;
+    top: 295px;
+    left: 10px;
+}
+
+#player2Side .letCall
+{
+    position: absolute;
+    top: 295px;
+    right: 10px;
+}
+
+.other
+{
+    height: 40px;
+    width: 120px;
+    background: silver;
+    border: 4px gray solid;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:5px;
+    box-sizing: border-box;
+    font-size: 25px;
+    color:white;
+}
+
+#player1Side .other
+{
+    position: absolute;
+    top: 355px;
+    left: 10px;
+}
+
+#player2Side .other
+{
+    position: absolute;
+    top: 355px;
+    right: 10px;
+}
+
+.serveIndicator
+{
+    height: 120px;
+    width: 120px;
+    background: black;
+    border-radius: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:5px;
+    box-sizing: border-box;
+}
+.serveIndicator .left-dot
+{
+    position: relative;
+    top: -30px;
+    left:-12px;
+    height: 10px;
+    width: 10px;
+    background: yellow;
+    border-radius: 90px;
+    box-sizing: border-box;
+
+}
+.serveIndicator .right-dot
+{
+    position: relative;
+    top: -30px;
+    left:-3px;
+    height: 10px;
+    width: 10px;
+    background: yellow;
+    border-radius: 90px;
+    box-sizing: border-box;
+
+}
+
+.serveIndicator .side
+{
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    color:white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+#player1Side .serveIndicator
+{
+    position: absolute;
+    top: 415px;
+    left: 10px;
+}
+
+#player2Side .serveIndicator
+{
+    position: absolute;
+    top: 415px;
+    right: 10px;
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#endMarker
+{
+    position: absolute;
+    top: 612px;
+    height:5px;
+    width:360px;
+    background: yellow;
+}
