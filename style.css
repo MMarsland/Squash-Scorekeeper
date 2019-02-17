@@ -1,5 +1,6 @@
 html,body {
     margin: 0;
+    font-family: "Courier New", Courier, monospace;
 }
 body
 {
@@ -18,17 +19,83 @@ body
     display:flex;
     justify-content: center;
     align-items: center;
-    height:2960px;
-    width:1440px;
-    background: red;
-    /*height: 740px;*/
-    /*width:360px;*/
-    opacity: 0.1;
+    /* height:2960px;
+    width:1440px; */
+    height: 740px;
+    width:360px;
 }
 
+#runningGameScreen
+{
+    background: darkslategrey;
+    opacity: 1;
+    height:100%;
+    width:100%;
+    text-align: center;
+}
 
 #exit
 {
-    height:100px;
-    width:500px;
+    position: absolute;
+    top: 25px;
+    left: 15px;
+    height: 25px;
+    width: 35px;
+    font-size: 20px;
+    color: white;
+}
+
+#gameNum
+{
+    position: absolute;
+    top: 10px;
+    left: calc(180px - 40px);
+    height: 25px;
+    width: 80px;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+}
+#matchScore
+{
+    position: absolute;
+    top: 35px;
+    left: calc(180px - 40px);
+    height: 25px;
+    width: 80px;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+}
+
+#matchTimeLabel
+{
+    position: absolute;
+    top: 5px;
+    left: calc(360px - 85px);
+    height: 15px;
+    width: 80px;
+    font-size: 12px;
+    color: orange;
+}
+
+#GameTimeLabel
+{
+    position: absolute;
+    top: 45px;
+    left: calc(360px - 85px);
+    height: 15px;
+    width: 80px;
+    font-size: 12px;
+    color: orange;
+}
+
+#divider
+{
+    position: absolute;
+    top: 80px;
+    left:5px;
+    border: 1px black solid;
+    height: 0px;
+    width: 350px;
 }
