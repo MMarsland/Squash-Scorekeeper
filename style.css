@@ -36,9 +36,10 @@ body
 
 #exit
 {
+    display: none;
     position: absolute;
-    top: 17px;
-    left: 25px;
+    top: 15px;
+    left: 20px;
     height: 40px;
     width: 40px;
     font-size: 20px;
@@ -47,9 +48,10 @@ body
 
 #settings
 {
+    display: none;
     position: absolute;
-    top: 37px;
-    left: 25px;
+    top: 42px;
+    left: 20px;
     height: 40px;
     width: 40px;
     font-size: 20px;
@@ -377,7 +379,12 @@ body
 
 
 
-
+.my-bitmoji-stickerpicker-icon-target
+{
+    position:absolute;
+    top:15px;
+    left:15px;
+}
 
 
 

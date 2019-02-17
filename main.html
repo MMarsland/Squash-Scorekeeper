@@ -23,14 +23,14 @@
                     
                     
                     <div id="player1Side">
-                        <div class="name" onclick="editPlayer1()">Michael</div>
+                        <div class="name" contenteditable="true" onclick="editPlayer1()">Michael</div>
                         <div class="score" onclick="scorePlayer1()">0</div>
                         <div class="letCall" onclick="letCallPlayer1()">Let Call</div>
                         <div class="other" onclick="letCallPlayer1()">Other</div>
                         <div class="serveIndicator"><div class="left-dot"></div><div class="right-dot"></div><div class="side">R</div></div>
                     </div>
                     <div id="player2Side">
-                        <div class="name" onclick="editPlayer2()">Mohamed</div>
+                        <div class="name" onkeypress="return (this.innerText.length <= 7)" contenteditable="true" onclick="editPlayer2()">Mohamed</div>
                         <div class="score" onclick="scorePlayer2()">0</div>
                         <div class="letCall" onclick="letCallPlayer2()">Let Call</div>
                         <div class="other" onclick="letCallPlayer2()">Other</div>
@@ -44,6 +44,50 @@
                 </div>
             </div>
         </div>
+
+        <div class="my-bitmoji-stickerpicker-icon-target" />
+        <script>
+        window.snapKitInit = function () {
+            // Argument 1
+            var bitmojiWebPickerIconClass =
+            'my-bitmoji-stickerpicker-icon-target';
+
+            // Argument 2
+            var uiOptions = {
+            onStickerPickCallback:
+                function onStickerPickCallback(bitmojiImgURL){
+                console.log(bitmojiImgURL);
+                },
+            webpickerPosition: 'bottomRight',
+            };
+
+            // Argument 3
+            var loginParamsObj = {
+            clientId: 'your-clientId',
+            redirectURI: 'your-redirectURI',
+            scopeList: [ // the list of scopes you are approved for
+            'user.bitmoji.avatar',
+            'user.display_name',
+            ],
+            };
+
+            // Mount Bitmoji Icon(s)
+            snap.bitmojikit.mountBitmojiStickerPickerIcons(
+            bitmojiWebPickerIconClass,
+            uiOptions,
+            loginParamsObj,
+            );
+        };
+
+        // Load the SDK asynchronously
+        (function (d, s, id) {
+            var js, sjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "https://sdk.snapkit.com/js/v1/login_bitmoji.js";
+            sjs.parentNode.insertBefore(js, sjs);
+        }(document, 'script', 'bitmojikit-sdk'));
+        </script>
     </body>
 
 </html>
