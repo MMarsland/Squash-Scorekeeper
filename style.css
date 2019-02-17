@@ -37,11 +37,11 @@ body
 #exit
 {
     position: absolute;
-    top: 25px;
-    left: 15px;
-    height: 25px;
-    width: 35px;
-    font-size: 20px;
+    top: 27px;
+    left: 25px;
+    height: 40px;
+    width: 40px;
+    font-size: 25px;
     color: white;
 }
 
@@ -49,21 +49,21 @@ body
 {
     position: absolute;
     top: 10px;
-    left: calc(180px - 40px);
+    left: calc(180px - 50px);
     height: 25px;
-    width: 80px;
-    font-size: 20px;
+    width: 100px;
+    font-size: 25px;
     text-align: center;
     color: white;
 }
 #matchScore
 {
     position: absolute;
-    top: 35px;
-    left: calc(180px - 40px);
+    top: 40px;
+    left: calc(180px - 60px);
     height: 25px;
-    width: 80px;
-    font-size: 25px;
+    width: 120px;
+    font-size: 30px;
     color: white;
     text-align: center;
 }
@@ -79,15 +79,37 @@ body
     color: orange;
 }
 
+#matchTime
+{
+    position: absolute;
+    top: 20px;
+    left: calc(360px - 85px);
+    height: 38px;
+    width: 80px;
+    font-size: 20px;
+    color: white;
+}
+
 #GameTimeLabel
 {
     position: absolute;
-    top: 45px;
+    top: 42px;
     left: calc(360px - 85px);
     height: 15px;
     width: 80px;
     font-size: 12px;
     color: orange;
+}
+
+#gameTime
+{
+    position: absolute;
+    top: 55px;
+    left: calc(360px - 85px);
+    height: 38px;
+    width: 80px;
+    font-size: 20px;
+    color: white;
 }
 
 #divider
@@ -270,16 +292,59 @@ body
 #player1Side .serveIndicator
 {
     position: absolute;
-    top: 415px;
+    top: 410px;
     left: 10px;
+    display: none;
 }
 
 #player2Side .serveIndicator
 {
     position: absolute;
-    top: 415px;
+    top: 410px;
     right: 10px;
-    display: none;
+    
+}
+
+#speechRecognitionBox
+{
+    position: absolute;
+    top: 540px;
+    left: 10px;
+    height:20px;
+    width:340px;
+    background:gray;
+    border: 3px darkgray solid;
+    color: purple;
+}
+
+#undoBox
+{
+    position: absolute;
+    top: 570px;
+    left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:30px;
+    width:340px;
+    background:rgb(209, 209, 209);
+    border: 3px rgb(255, 255, 255) solid;
+    opacity: 0.5;
+}
+#undoText
+{
+    font-size: 25px;
+    font-weight:300;
+    position: absolute;
+    top: 570px;
+    left: 155px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:30px;
+    color: black;
+    z-index:2;
 }
 
 

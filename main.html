@@ -4,7 +4,7 @@
         <script src="script.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
-    <body>
+    <body onload="startApp();">
         <div id="mainWrapper">
             <div id="s8PhoneScreen">
                 <div id="runningGameScreen">
@@ -12,9 +12,9 @@
                     <div id="gameNum">Game #</div>
                     <div id="matchScore">"0-0"</div>
                     <div id="matchTimeLabel">Match Time</div>
-                    <div id="matchTime"></div>
+                    <div id="matchTime">4:25</div>
                     <div id="gameTimeLabel">Game Time</div>
-                    <div id="gameTime"></div>
+                    <div id="gameTime">1:15</div>
                     <div id="divider"></div>
                     <div id="scoreHistory"></div>
                     
@@ -37,8 +37,9 @@
                         <div class="serveIndicator"><div class="left-dot"></div><div class="right-dot"></div><div class="side">R</div></div>
                     </div>
 
-                    <div id="speachRecognitionBox"></div>
-                    <div id="undo">Undo</div>
+                    <div id="speechRecognitionBox">"Point Michael"</div>
+                    <div id="undoBox"></div>
+                    <div id="undoText">Undo</div>
                     <div id="endMarker"></div>
                 </div>
             </div>
