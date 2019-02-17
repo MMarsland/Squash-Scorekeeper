@@ -1,0 +1,34 @@
+html,body {
+    margin: 0;
+}
+body
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#mainWrapper
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#s8PhoneScreen
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:2960px;
+    width:1440px;
+    background: red;
+    /*height: 740px;*/
+    /*width:360px;*/
+    opacity: 0.1;
+}
+
+
+#exit
+{
+    height:100px;
+    width:500px;
+}
