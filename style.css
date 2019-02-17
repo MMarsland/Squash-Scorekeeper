@@ -37,11 +37,22 @@ body
 #exit
 {
     position: absolute;
-    top: 27px;
+    top: 17px;
     left: 25px;
     height: 40px;
     width: 40px;
-    font-size: 25px;
+    font-size: 20px;
+    color: white;
+}
+
+#settings
+{
+    position: absolute;
+    top: 37px;
+    left: 25px;
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
     color: white;
 }
 
@@ -68,11 +79,21 @@ body
     text-align: center;
 }
 
+#clockAreaCover
+{
+    position: absolute;
+    top:0px;
+    right: 0px;
+    height:80px;
+    width:90px;
+    z-index:4;
+}
+
 #matchTimeLabel
 {
     position: absolute;
     top: 5px;
-    left: calc(360px - 85px);
+    right: 5px;
     height: 15px;
     width: 80px;
     font-size: 12px;
@@ -83,7 +104,7 @@ body
 {
     position: absolute;
     top: 20px;
-    left: calc(360px - 85px);
+    right: 5px;
     height: 38px;
     width: 80px;
     font-size: 20px;
@@ -94,7 +115,7 @@ body
 {
     position: absolute;
     top: 42px;
-    left: calc(360px - 85px);
+    right: 5px;
     height: 15px;
     width: 80px;
     font-size: 12px;
@@ -105,7 +126,7 @@ body
 {
     position: absolute;
     top: 55px;
-    left: calc(360px - 85px);
+    right: 5px;
     height: 38px;
     width: 80px;
     font-size: 20px;
