@@ -182,6 +182,10 @@ function scorePlayer1()
         match.player1.win(match, match.palyer2);
     }
 }
+function decreaseScorePlayer1()
+{
+    match.player1.decreaseScore();
+}
 
 function letCallPlayer1()
 {
@@ -206,6 +210,11 @@ function scorePlayer2()
     {//Player1 win
         match.player2.win(match, match.palyer1);
     }
+}
+
+function decreaseScorePlayer2()
+{
+    match.player2.decreaseScore();
 }
 
 function letCallPlayer2()
@@ -279,10 +288,23 @@ class Clock
       
 }
 
+function toggleClockColor()
+{
+    if (match.clock.paused)
+    {
+        document.getElementById("clockAreaCover").style = "background: red; opacity: 0.4;";
+    }
+    else 
+    {
+        document.getElementById("clockAreaCover").style = "opacity: 0.0;";
+    }
+}
+
 function clockPlayPause()
 {
     match.clock.toggle();
     match.currentGame.clock.toggle();
+    toggleClockColor();
 }
 
 function updateClocksSync()
@@ -291,3 +313,47 @@ function updateClocksSync()
     match.currentGame.clock.tick();
     setTimeout(function(){updateClocksSync();}, 1000);
 }
+
+    window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
+    var finalTranscript = '';
+    var stopped = true;
+    let recognition = new window.SpeechRecognition();
+    recognition.continuous = true;
+    recognition.interimResults = true;
+    recognition.onresult = (event) => {
+        recognition.stop(); 
+        stopped = true;
+      
+      var current = event.resultIndex;
+      // Get a transcript of what was said.
+      var oldTrans = finalTranscript;
+      var finalTranscript = event.results[current][0].transcript;
+      
+      var stopThis = (finalTranscript == oldTrans);
+      
+      var mobileRepeatBug = (current == 1 && finalTranscript == event.results[0][0].transcript);
+
+      if(!mobileRepeatBug && !stopThis) {
+        console.log(finalTranscript);
+        if (finalTranscript == "Muhammed") finalTranscript = "Mohamed";
+        if (finalTranscript.includes("Michael") || finalTranscript.includes("red") || finalTranscript.includes("one") || finalTranscript.includes("1"))
+        {
+            scorePlayer1();
+        }
+        else if (finalTranscript.includes("Mohamed") || finalTranscript.includes("mo")|| finalTranscript.includes("blue") || finalTranscript.includes("two") || finalTranscript.includes("2"))
+        {
+            scorePlayer2();
+        }
+        else if (finalTranscript.includes("pause") || finalTranscript.includes("break") || finalTranscript.includes("stop") || finalTranscript.includes("start"))
+        {
+            clockPlayPause();
+        }
+        
+        document.getElementById('speechRecognitionBox').innerHTML = finalTranscript;
+        
+        
+        setTimeout(function() {if (stopped) {recognition.start(); stopped = false;}}, 750);
+        }
+    }
+    recognition.start();
+    stopped = false;
